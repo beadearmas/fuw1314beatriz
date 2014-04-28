@@ -1,0 +1,62 @@
+<html>
+<head>
+	<title> A1: Almacenamiento NAS</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />+ç
+</head>
+<body>
+<div style='display:table-row; padding: 10px;'>
+  <div style='float: left; width=20%; padding:10px;'>
+  <img src='./files/logo.png'/>
+  </div>
+  <div style='float: left;padding:10px'>
+  <ul>
+    <li><b>M&oacute;dulo:</b> <i>Sistemas Operativos</i></li>
+    <li><b>T&iacute;tulo del trabajo</b> <i> A1: Almacenamiento NAS</i></li>
+    <li><b>Componentes del grupo:</b> <i>Beatriz de Armas Salvador</i></li>
+    <li><b>Curso Acad&eacute;mico:</b> <i>2013/2014</i></li>
+    <li><b>Fecha de entrega:</b> <i>24 de Abril de 2014</i></li>
+  </ul>
+  </div>
+</div>
+<div style='float: clear;background-color: #eeeeee; border:2px solid; border-radius:10px; padding: 10px;'>
+<a href='#bloque1'>1.1 Preparar la maquina virtual</a> | <a href='#bloque2'>1.2 Instalar y configurar</a> | <a href='#bloque3'>1.3 Crear un volumen</a> | <a href='#bloque4'>1.4 Comprobar desde cliente</a>
+</div>
+<h1><a id='bloque1'>1.1 Preparar la MV</a></h1>
+<p>Crear la MV en VBox.Elegir MV del tipo FreeBSD u OpenBSD.</p>
+<img border="4" src='./files/uno.png'>
+<p>Además de un disco duro virtual con FreeNAS, debemos añadir a la máquina virtual 2 discos más de 2GB cada uno, para volumen de almacenamiento.</p>
+
+<h1><a id='bloque2'>1.2 Instalar y configurar</a></h1>
+<p>Instalamos el SO, y configuramos la ip, la máscara y el DNS</p>
+<img border="4" src='./files/dos.png'>
+<p>Ip y máscara</p>
+<img border="4" src='./files/tres.png'>
+<p></p>
+<img border="4" src='./files/cuatro.png'>
+<p>DNS</p>
+<img border="4" src='./files/cinco.png'>
+<p>Acceder al PANEL de configuración de FreeNAS desde una navegador web. Usando la IP del servidor FreeNAS.</p>
+<img border="4"src='./files/seis.png'>
+<h1><a id='bloque3'>1.3 Crear un volumen</a></h1>
+<p>Vamos a la "shell" del SO, y creamos dentro de "/mnt/" el "/volumen1"</p>
+<img border="4" src="./files/nueve.png">
+<p>Para acceder al PANEL de configuración (GUI, por entorno gráfico) de FreeNAS, iniciamos un navegador web desde otro PC de la red. Y navegamos usando la IP del servidor FreeNAS.</p>
+<p>Cuando estamos en el PANEL nos disponemos a crear un volumen:</p>
+<img border="4" src="./files/ocho.png">
+<p>Ejecutar df -hT (Para comprobar que está montado el volumen1)</p>
+<img border="4" src="./files/diez.png">
+<p>Ejecutamos mkdir /mnt/volumen1/public</p>
+<img border="4" src="./files/once.png">
+<p>Ejecutamos chmod 777 /mnt/volumen1/public (Creamos una carpeta de uso público lectura/escritura). </p>
+<img border="4" src="./files/doce.png">
+<p>Creamos un recurso compartida CIFS/SMB, ir a "Sharing/Compartido" -> "Añadir recurso CIFS". Path a /mnt/volumen1/public.</p>
+<img border="4" src="./files/trece.png">
+<p></p>
+<img border="4" src="./files/catorce.png">
+<h1><a id='#bloque4'>1.4 Comprobar desde cliente</a></h1>
+<p>Probar que podemos acceder a dicho recurso compartido SMB/CIFS, desde otro equipo de la red. Por ejemplo, usando un cliente Windows7.</p>ç
+<img border="4" src="./files/quince.png">
+<p></p>
+<img border="4" src="./files/dieciseis.png">
+</body>
+</html>
